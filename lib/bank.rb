@@ -10,6 +10,8 @@ class Bank
     @account_balance += in_payment
   end
 
-
+  def withdraw(out_payment)
+    @account_balance -= out_payment
+  end
 
 end
