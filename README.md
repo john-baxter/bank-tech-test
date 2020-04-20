@@ -39,3 +39,9 @@ I will start working towards this as my MVP, there should be:
 
 ### developing the MVP further
 After the initial three functinalities, I will begin to add the datestamps to the transactions ann think about how to print the statement.
+
+next:
+start to describe setting the project up.
+
+## project setup
+The code for this project will be written in Ruby and tested using Rspec. after setting up the project directory, run the command `$ rspec --init` from the terminal.
