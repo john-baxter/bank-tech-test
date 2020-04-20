@@ -37,7 +37,7 @@ I will start working towards this as my MVP, there should be:
 - some means of reducing the balance
 - some means of tracking what the balance is at each step
 
-### developing the MVP further
+### developing beyond the MVP
 After the initial three functinalities, I will begin to add the datestamps to the transactions ann think about how to print the statement.
 
 next:
@@ -45,3 +45,9 @@ start to describe setting the project up.
 
 ## project setup
 The code for this project will be written in Ruby and tested using Rspec. after setting up the project directory, run the command `$ rspec --init` from the terminal.
+
+# next steps
+try to refactor the spec file; the code is not DRY since `@bank.deposit(100)` appears twice in the tests. Think about how to fix this; then the MVP will be finished and I can merge branches.
+## next next steps
+remember to branch before starting on developing beyond the MVP
+
