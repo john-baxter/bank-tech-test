@@ -2,7 +2,7 @@
 
 ## user stories
 I decided to try to use each one of the Acceptence Criteria to create a user story; I found that since the first two relate to virtually the same thing; I could apply the DRY principle here and let the second user story reflect not the act of depositing but the other pieces of information that go along with the deposit. I also extended the scope to "transactions" so this user story can refer to withdrawals too. \
-Also it became apparent tht the last two lines refer to the same action; so I have four user stories.
+Also it became apparent that the last two lines refer to the same action; so I have four user stories.
 
 ```
 As a client
@@ -40,14 +40,15 @@ I will start working towards this as my MVP, there should be:
 ### developing beyond the MVP
 After the initial three functinalities, I will begin to add the datestamps to the transactions ann think about how to print the statement.
 
-next:
-start to describe setting the project up.
-
 ## project setup
 The code for this project will be written in Ruby and tested using Rspec. after setting up the project directory, run the command `$ rspec --init` from the terminal.
 
-# next steps
-try to refactor the spec file; the code is not DRY since `@bank.deposit(100)` appears twice in the tests. Think about how to fix this; then the MVP will be finished and I can merge branches.
-## next next steps
-remember to branch before starting on developing beyond the MVP
+## next steps
+The MVP is complete, so the next steps will be:
 
+- setting up a way to record what transactions have been made
+
+actually that's it for now; after this is done, the datestamps will be  added into the `.deposit` and `.withdraw` methods, then it should be straightforward enough to add these into whatever method is recording these and subsequently it will be straightforward to create a method to print these.
+
+
+### next next steps
