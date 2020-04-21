@@ -33,6 +33,9 @@ describe Bank do
   
   end
 
-  
+  # unit test 4
+  it "has a way to store transactions" do
+    expect(@bank.transactions).not_to be_nil
+  end
 
 end

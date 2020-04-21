@@ -1,9 +1,10 @@
 class Bank
 
-  attr_reader :account_balance
+  attr_reader :account_balance, :transactions
 
   def initialize
     @account_balance = 0.00
+    @transactions = []
   end
 
   def deposit(in_payment)
