@@ -13,17 +13,24 @@ describe Bank do
   
   # unit test 2
   it "can receive deposits" do
-    # not DRY
     @bank.deposit(100)
     expect(@bank.account_balance).to eq (100.00)
   end
+
+  describe '#withdraw' do
+
+    before(:each) do
+      @bank.send(:deposit, 100)
+    end
+    
+    # unit test 3
+    it "can pay out withdrawals" do
+      # not DRY
+      # @bank.deposit(100)
+      @bank.withdraw(50)
+      expect(@bank.account_balance).to eq (50)
+    end
   
-  # unit test 3
-  it "can pay out withdrawals" do
-    # not DRY
-    @bank.deposit(100)
-    @bank.withdraw(50)
-    expect(@bank.account_balance).to eq (50)
   end
 
 end
