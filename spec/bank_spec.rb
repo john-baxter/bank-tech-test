@@ -44,4 +44,12 @@ describe Bank do
     expect(@bank.transactions).to include(100)
   end
 
+  # unit test 6
+  it "stores withdrawals too" do
+    @bank.deposit(100)
+    @bank.withdraw(50)
+    expect(@bank.transactions).to include(100, 50)
+  end
+  
+
 end

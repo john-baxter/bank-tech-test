@@ -11,9 +11,10 @@ class Bank
     @account_balance += in_payment
     @transactions.push(in_payment)
   end
-
+  
   def withdraw(out_payment)
     @account_balance -= out_payment
+    @transactions.push(out_payment)
   end
 
 end
