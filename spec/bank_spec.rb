@@ -41,14 +41,22 @@ describe Bank do
   # unit test 5
   it "actually stores transactions" do
     @bank.deposit(100)
-    expect(@bank.transactions).to include(100)
+    expect(@bank.transactions[0][:credit]).to eq (100)
   end
-
+  
   # unit test 6
   it "stores withdrawals too" do
     @bank.deposit(100)
     @bank.withdraw(50)
-    expect(@bank.transactions).to include(100, 50)
+    # expect(@bank.transactions).to include(100, 50)
+    expect(@bank.transactions[0][:credit]).to eq (100)
+    expect(@bank.transactions[1][:debit]).to eq (50)
+  end
+  
+  # unit test 7
+  it "has a datestamp with the transaction amount" do
+    @bank.deposit(100)
+    expect(@bank.transactions[0][:date].class).to be Time
   end
   
 

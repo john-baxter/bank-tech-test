@@ -52,3 +52,12 @@ actually that's it for now; after this is done, the datestamps will be  added in
 
 
 ### next next steps
+
+example of how printed statement should look:
+```
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+```
+(from the acceptance criteria document)
