@@ -8,13 +8,22 @@ class Bank
   end
 
   def deposit(in_payment)
-    @account_balance += in_payment
-    @transactions.push(in_payment)
+    adjust_balance("+", in_payment)
+    update_transactions(in_payment)
   end
   
   def withdraw(out_payment)
-    @account_balance -= out_payment
-    @transactions.push(out_payment)
+    adjust_balance("-", out_payment)
+    update_transactions(out_payment)
+  end
+
+  def update_transactions(transaction_amount)
+    @transactions.push(transaction_amount)
+  end
+
+  def adjust_balance(mathematical_operator, money)
+    @account_balance += money if mathematical_operator == "+"
+    @account_balance -= money if mathematical_operator == "-"
   end
 
 end
