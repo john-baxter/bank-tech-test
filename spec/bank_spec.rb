@@ -38,4 +38,10 @@ describe Bank do
     expect(@bank.transactions).not_to be_nil
   end
 
+  # unit test 5
+  it "actually stores transactions" do
+    @bank.deposit(100)
+    expect(@bank.transactions).to include(100)
+  end
+
 end
