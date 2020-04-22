@@ -12,15 +12,22 @@ class Bank
   def deposit(in_payment)
     adjust_balance("+", in_payment)
     update_transactions(in_payment, "")
+    # pass empty string to populate :debit column with nothing; as per acceptance criteria
   end
   
   def withdraw(out_payment)
     adjust_balance("-", out_payment)
     update_transactions("", out_payment)
+    # pass empty string to populate :credit column with nothing; as per acceptance criteria
   end
 
   def update_transactions(credit, debit)
-    @transactions.push({date: Time.now, credit: credit, debit: debit})
+    timestamp = Time.now.to_a
+
+    # datestring = timestamp[3] + '/' + timestamp[4] + '/' + timestamp[5]
+    datestring = "#{timestamp[3].to_s.rjust(2, '0')}/#{timestamp[4].to_s.rjust(2, '0')}/#{timestamp[5].to_s.rjust(4, '0')}"
+    # p transaction_timestamp
+    @transactions.push({date: datestring, credit: credit, debit: debit})
   end
 
   def adjust_balance(mathematical_operator, money)
