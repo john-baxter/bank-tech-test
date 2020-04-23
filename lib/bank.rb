@@ -16,7 +16,8 @@ class Bank
   end
   
   def withdraw(out_payment)
-    adjust_balance("-", out_payment)
+    adjust_balance("-", '%.02f' % out_payment)
+    # adjust_balance("-", out_payment)
     update_transactions("", out_payment)
     # pass empty string to populate :credit column with nothing; as per acceptance criteria
   end

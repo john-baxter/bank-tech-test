@@ -84,6 +84,14 @@ describe Bank do
     @bank.withdraw(50)
     expect(@bank.print_statement).to include("date || credit || debit || balance")
   end
+  
+  # unit test 12
+  it "contains the transaction information in the statement" do
+    @bank.deposit(100)
+    @bank.withdraw(50)
+    expect(@bank.print_statement).to include("23/04/2020 || 100")
+    # I got to here and realised I was working with integers not floats. I'm currently trying to set up the methods to handle 2dp floats.
+
 
   
 end
