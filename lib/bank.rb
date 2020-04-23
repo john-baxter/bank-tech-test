@@ -16,8 +16,7 @@ class Bank
   end
   
   def withdraw(out_payment)
-    adjust_balance("-", '%.02f' % out_payment)
-    # adjust_balance("-", out_payment)
+    adjust_balance("-", out_payment)
     update_transactions("", out_payment)
     # pass empty string to populate :credit column with nothing; as per acceptance criteria
   end
@@ -37,7 +36,7 @@ class Bank
   end
 
   def print_statement
-    "date || credit || debit || balance"
+    "date || credit || debit || balance\n#{@transactions[0][:date]} || #{sprintf '%.2f', @transactions[0][:credit]} || || #{sprintf '%.2f', @transactions[0][:balance]}"
   end
 
 end

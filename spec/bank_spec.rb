@@ -89,7 +89,10 @@ describe Bank do
   it "contains the transaction information in the statement" do
     @bank.deposit(100)
     @bank.withdraw(50)
-    expect(@bank.print_statement).to include("23/04/2020 || 100")
+    expect(@bank.print_statement).to include("23/04/2020 || 100.00 || || 100.00")
+  end
+   
+   
     # I got to here and realised I was working with integers not floats. I'm currently trying to set up the methods to handle 2dp floats.
 
 
