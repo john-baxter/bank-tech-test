@@ -35,4 +35,7 @@ class Bank
     datestring = "#{timestamp[3].to_s.rjust(2, '0')}/#{timestamp[4].to_s.rjust(2, '0')}/#{timestamp[5].to_s.rjust(4, '0')}"
   end
 
+  def print_statement
+  end
+
 end
