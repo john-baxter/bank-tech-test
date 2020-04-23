@@ -72,10 +72,18 @@ describe Bank do
     expect(@bank.transactions[0][:balance]).to eq (100)
     expect(@bank.transactions[1][:balance]).to eq (50)
   end
-
+  
   # unit test 10
   it "can print the customer's statement" do
     expect(@bank).to respond_to(:print_statement)
   end
+  
+  # unit test 11
+  it "can actually print the statement" do
+    @bank.deposit(100)
+    @bank.withdraw(50)
+    expect(@bank.print_statement).to include("date || credit || debit || balance")
+  end
+
   
 end
