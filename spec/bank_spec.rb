@@ -55,10 +55,15 @@ describe Bank do
   # unit test 7
   it "has a datestamp with the transaction amount" do
     @bank.deposit(100)
-    # expect(@bank.transactions[0][:date].class).to be Time
-    # expect(@bank.transactions[0][:date]).eql? "/^\d{2}/\d{2}/\d{4}$/"
     expect(@bank.transactions[0][:date]).eql? '^(0[1-9]|[1-2][0-9]|3[1-2])/(0[1-9]|1[1-2])/(202[0-9]$'
   end
   
+  # unit test 8
+  it "includes balance in it's tracking of transactions" do
+    @bank.deposit(100)
+    expect(@bank.transactions[0][:balance]).not_to be_nil
+  end
 
+    
+  
 end
