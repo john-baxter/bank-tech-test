@@ -22,14 +22,17 @@ class Bank
   end
 
   def update_transactions(credit, debit)
-    timestamp = Time.now.to_a
-    datestring = "#{timestamp[3].to_s.rjust(2, '0')}/#{timestamp[4].to_s.rjust(2, '0')}/#{timestamp[5].to_s.rjust(4, '0')}"
-    @transactions.push({date: datestring, credit: credit, debit: debit, balance: @account_balance})
+    @transactions.push({date: get_date, credit: credit, debit: debit, balance: @account_balance})
   end
-
+  
   def adjust_balance(mathematical_operator, money)
     @account_balance += money if mathematical_operator == "+"
     @account_balance -= money if mathematical_operator == "-"
+  end
+  
+  def get_date
+    timestamp = Time.now.to_a
+    datestring = "#{timestamp[3].to_s.rjust(2, '0')}/#{timestamp[4].to_s.rjust(2, '0')}/#{timestamp[5].to_s.rjust(4, '0')}"
   end
 
 end
