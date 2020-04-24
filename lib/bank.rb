@@ -36,7 +36,42 @@ class Bank
   end
 
   def print_statement
-    "date || credit || debit || balance\n#{@transactions[0][:date]} || #{sprintf '%.2f', @transactions[0][:credit]} || || #{sprintf '%.2f', @transactions[0][:balance]}"
+    puts print_statement_header(@transactions)
+    counter = 0
+    while (counter < @transactions.length) do
+      puts print_statement_line(@transactions, counter)
+      counter += 1
+    end
+  end
+
+  def print_statement_header(array)
+    return "No transactions to list" if array == []
+    header_string = ""
+    if array[0].class == Hash
+      array[0].each do |key, value|
+        header_string << "#{key.to_s} "
+      end
+      header_string.rstrip!.gsub!(" ", " || ")
+      return header_string
+    end
+  end
+  
+  def print_statement_line(array, counter)
+    line_string = ""
+    if array[0].class == Hash
+      array[counter].each do |key, value|
+        case value
+        when String
+          line_string << "#{value} "
+        when Integer
+          line_string << "#{sprintf '%.2f', value} "
+        when Float
+          line_string << "#{sprintf '%.2f', value} "
+        end
+      end
+        line_string.rstrip!.gsub!(" ", " || ").gsub!("  ", " ")
+        return line_string
+    end
   end
 
 end
